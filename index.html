@@ -10,6 +10,7 @@
       href="./images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Intro component with sign up form</title>
+    <link rel="stylesheet" href="style.css" />
     <style>
       .attribution {
         font-size: 11px;
@@ -23,52 +24,71 @@
   <body>
     <!-- MAIN -->
     <main>
-      <h1>Learn to code by watching others</h1>
-      <p>
-        See how experienced developers solve problems in real-time. Watching
-        scripted tutorials is great, but understanding how developers think is
-        invaluable.
-      </p>
       <div>
-        <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
-        <div>
-          <form action="#" method="dialog">
-            <input
-              type="text"
-              name="first-name"
-              id=""
-              placeholder="First Name"
-            />
-            <input type="text" name="last-name" id="" placeholder="Last Name" />
-            <input
-              type="email"
-              name="email"
-              id=""
-              placeholder="Email Address"
-            />
-            <input
-              type="password"
-              name="password"
-              id=""
-              placeholder="Password"
-            />
-
-            <button type="submit">Claim your free trial</button>
-          </form>
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
+      <div>
+        <p class="trial-offer"><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
+        <form action="#" method="dialog">
+          <ul>
+            <li>
+              <input
+                type="text"
+                name="first-name"
+                id="user__firstName"
+                placeholder="First Name"
+              />
+            </li>
+            <li>
+              <input
+                type="text"
+                name="last-name"
+                id="user__lastName"
+                placeholder="Last Name"
+              />
+            </li>
+            <li>
+              <input
+                type="email"
+                name="email"
+                id="user__email"
+                placeholder="Email Address"
+              />
+            </li>
+            <li>
+              <input
+                type="password"
+                name="password"
+                id="user__password"
+                placeholder="Password"
+              />
+            </li>
+            <li>
+              <button type="submit">Claim your free trial</button>
+            </li>
+          </ul>
           <p>
             By clicking the button, you are agreeing to our
             <a href=""> Terms and Services </a>
           </p>
-        </div>
+        </form>
       </div>
     </main>
     <!-- FOOTER -->
     <footer>
       <p class="attribution">
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+        . Coded by
+        <a target="_blank" href="https://github.com/noob-web-dev">Ravi Kumar</a
+        >.
       </p>
     </footer>
   </body>
