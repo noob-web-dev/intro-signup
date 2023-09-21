@@ -14,11 +14,27 @@ html {
   border: none;
 }
 
+:root {
+  --clr-red: hsl(0, 100%, 74%);
+  --clr-blue: hsl(248, 32%, 49%);
+  --clr-green: hsl(154, 59%, 51%);
+  --clr-green-h: hsl(154, 59%, 51%, 0.75);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --clr-d-blue: hsl(249, 10%, 26%);
+  --clr-g-blue: hsl(246, 25%, 77%);
+
+  --bg-desktop: url(./images/bg-intro-desktop.png);
+  --bg-mobile: url(./images/bg-intro-mobile.png);
+
+  --icn-err: url(./images/icon-error.svg);
+}
+
 body {
   min-height: 100vh;
-  background: url("./images/bg-intro-mobile.png") hsl(0, 100%, 74%);
+  background: var(--bg-mobile) var(--clr-red);
   font-family: "Poppins", sans-serif;
-  color: white;
+  color: var(--clr-white);
   text-align: center;
   font-size: 1.6rem;
 }
@@ -70,21 +86,38 @@ div + div > * {
 }
 
 .trial-offer {
-  background-color: hsl(248, 32%, 49%);
+  background-color: var(--clr-blue);
   padding: 1.25em 2em;
 }
 
 form {
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--clr-white);
   padding: 8%;
+}
+
+li {
+  display: flex;
+  position: relative;
+  flex-direction: column;
 }
 
 li + li {
   margin-top: 1em;
 }
 
+li[data-invalid="true"] > .invalid,
+li[data-empty="true"] > .hide {
+  display: block;
+}
+
+li[data-invalid="true"] > input,
+li[data-empty="true"] > input {
+  outline: 1px solid var(--clr-red);
+  color: var(--clr-red);
+}
+
 form input {
-  color: hsl(249, 10%, 26%);
+  color: var(--clr-d-blue);
   font-weight: 700;
   border: 1px solid #00000033;
   border-radius: 0.5rem;
@@ -92,14 +125,25 @@ form input {
   width: 100%;
 }
 
-input:invalid {
-  outline: 1px solid hsl(0, 100%, 74%);
-  color: hsl(0, 100%, 74%);
+.err-msg {
+  color: var(--clr-red);
+  font-size: 1.2rem;
+  text-align: right;
 }
 
-input:invalid::-webkit-validation-bubble {
-  background-color: black;
-  border: 1rem;
+.icon {
+  width: 20px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.invalid {
+  display: none;
+}
+
+.hide {
+  display: none;
 }
 
 button {
@@ -107,40 +151,40 @@ button {
   padding: 1.25em;
   font-weight: 700;
   border-radius: 0.5rem;
-  background-color: hsl(154, 59%, 51%);
+  background-color: var(--clr-green);
   text-transform: uppercase;
-  color: hsl(0, 0%, 100%);
+  color: var(--clr-white);
 }
 
 ul + p {
   font-size: 0.65em;
-  color: hsl(246, 25%, 77%);
+  color: var(--clr-g-blue);
   padding: 0 1em;
   margin-top: 1rem;
 }
 
 ul + p > a {
   font-weight: 700;
-  color: hsl(0, 100%, 74%);
+  color: var(--clr-red);
 }
 
 input:active,
 input:focus {
-  outline: 1px solid hsl(248, 32%, 49%);
-  color: hsl(249, 10%, 26%);
+  outline: 1px solid var(--clr-g-blue);
+  color: var(--clr-d-blue);
 }
 
 button:hover,
 button:active,
 button:focus {
   outline: none;
-  background-color: hsl(154, 59%, 51%, 0.75);
+  background-color: var(--clr-green-h);
   cursor: pointer;
 }
 
 @media (max-width: 700px) {
   body {
-    background: url("./images/bg-intro-mobile.png") hsl(0, 100%, 74%);
+    background: url("./images/bg-intro-mobile.png") var(--clr-red);
   }
 
   main {

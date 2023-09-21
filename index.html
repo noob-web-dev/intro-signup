@@ -21,7 +21,7 @@
       }
     </style>
 
-    <script type="module" defer src="./script.js"></script>
+    <script defer src="./script.js"></script>
   </head>
   <body>
     <!-- MAIN -->
@@ -40,37 +40,47 @@
         </p>
         <form action="#" method="get">
           <ul>
-            <li>
+            <li data-empty="false">
               <input
                 type="text"
                 name="user__firstName"
                 id="first-name"
                 placeholder="First Name"
               />
+              <p class="err-msg hide">first name cannot be empty</p>
+              <img src="./images/icon-error.svg" class="icon hide" alt="" />
             </li>
-            <li>
+            <li data-empty="false">
               <input
                 type="text"
                 name="user__lastName"
                 id="last-name"
                 placeholder="Last Name"
               />
+              <p class="err-msg hide">last name cannot be empty</p>
+              <img src="./images/icon-error.svg" class="icon hide" alt="" />
             </li>
-            <li>
+            <li data-empty="false" data-invalid="false">
               <input
                 type="email"
                 name="user__email"
                 id="email"
                 placeholder="Email Address"
               />
+              <p class="err-msg invalid">looks like this is not an email</p>
+              <p class="err-msg hide">email cannot be empty</p>
+              <img src="./images/icon-error.svg" class="icon hide" alt="" />
+              <img src="./images/icon-error.svg" class="icon invalid" alt="" />
             </li>
-            <li>
+            <li data-empty="false">
               <input
                 type="password"
                 name="user__password"
                 id="password"
                 placeholder="Password"
               />
+              <p class="err-msg hide">password cannot be empty</p>
+              <img src="./images/icon-error.svg" class="icon hide" alt="" />
             </li>
             <li>
               <button type="submit">Claim your free trial</button>
